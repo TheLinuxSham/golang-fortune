@@ -5,7 +5,7 @@ COPY . .
 RUN go mod download
 RUN go build -o main ./cmd/api/main.go
 
-FROM gcr.io/distroless/base-debian12
+FROM scratch
 
 WORKDIR /app
 COPY --from=builder /build/main ./main
