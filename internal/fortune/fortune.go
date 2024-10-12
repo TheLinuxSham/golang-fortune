@@ -3,7 +3,8 @@ package fortune
 import (
 	"encoding/json"
 	"math/rand"
-	"os"
+
+	"github.com/TheLinuxSham/golang-fortune/internal/embedding"
 )
 
 type Fortunes struct {
@@ -19,16 +20,16 @@ func pickRandom(maxValue int) int {
 	return rand.Intn(maxValue)
 }
 
-func openJson(filepath string) *Fortunes {
-	file, err := os.Open(filepath)
-	if err != nil {
-		panic(err)
-	}
+func openJson() *Fortunes {
+	// file, err := os.Open(filepath)
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	defer file.Close()
+	// defer file.Close()
 
 	var fortunes Fortunes
-	err = json.NewDecoder(file).Decode(&fortunes)
+	err := json.Unmarshal(embedding.JsonFile, &fortunes)
 	if err != nil {
 		panic(err)
 	}
@@ -47,7 +48,7 @@ func selectFortune(fortunes Fortunes) (string, string) {
 }
 
 func FortuneTeller() (string, string) {
-	quotes := openJson("fortunes.json")
+	quotes := openJson()
 	animal, quote := selectFortune(*quotes)
 
 	return animal, quote

@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	"os"
 	"testing"
 )
 
@@ -33,21 +32,6 @@ func mockingJson() string {
 	return jsonData
 }
 
-func TestOpenJson(t *testing.T) {
-	file, err := os.Open("../../fortunes.json")
-	if err != nil {
-		t.Errorf("Failed to open Json: %v", err)
-	}
-
-	defer file.Close()
-
-	var quotes Fortunes
-	err = json.NewDecoder(file).Decode(&quotes)
-	if err != nil {
-		t.Errorf("Failed to process Json: %v", err)
-	}
-}
-
 func TestJsonFormat(t *testing.T) {
 	var fortunes Fortunes
 	err := json.Unmarshal([]byte(mockingJson()), &fortunes)
@@ -66,14 +50,14 @@ func TestJsonFormat(t *testing.T) {
 }
 
 func TestFJsonFile(t *testing.T) {
-	quotes := openJson("../../fortunes.json")
+	quotes := openJson()
 
 	fmt.Println(len(quotes.Fortunes))
 
 }
 
 func TestSelectFortune(t *testing.T) {
-	quotes := openJson("../../fortunes.json")
+	quotes := openJson()
 	animal, quote := selectFortune(*quotes)
 	fmt.Printf("\nanimal: %v, quote: %v", animal, quote)
 }
