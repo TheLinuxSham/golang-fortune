@@ -2,7 +2,7 @@ package fortune
 
 import (
 	"encoding/json"
-	"fmt"
+	"math/rand"
 	"os"
 )
 
@@ -15,8 +15,12 @@ type Fortune struct {
 	Quotes []string `json:"quotes"`
 }
 
-func openJson() *Fortunes {
-	file, err := os.Open("fortunes.json")
+func pickRandom(maxValue int) int {
+	return rand.Intn(maxValue)
+}
+
+func openJson(filepath string) *Fortunes {
+	file, err := os.Open(filepath)
 	if err != nil {
 		panic(err)
 	}
@@ -32,13 +36,19 @@ func openJson() *Fortunes {
 	return &fortunes
 }
 
-func FortuneTeller() {
-	quotes := openJson()
+func selectFortune(fortunes Fortunes) (string, string) {
+	idFortunes := pickRandom(len(fortunes.Fortunes))
+	idFortune := pickRandom(len(fortunes.Fortunes[idFortunes].Quotes))
 
-	for _, quote := range quotes.Fortunes {
-		fmt.Printf("\nQuotes from %s:\n", quote.Animal)
-		for _, q := range quote.Quotes {
-			fmt.Printf("\t%s\n", q)
-		}
-	}
+	animal := fortunes.Fortunes[idFortunes].Animal
+	quote := fortunes.Fortunes[idFortunes].Quotes[idFortune]
+
+	return animal, quote
+}
+
+func FortuneTeller() (string, string) {
+	quotes := openJson("fortunes.json")
+	animal, quote := selectFortune(*quotes)
+
+	return animal, quote
 }

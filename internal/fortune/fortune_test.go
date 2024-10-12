@@ -33,23 +33,6 @@ func mockingJson() string {
 	return jsonData
 }
 
-func mockingOpenJson() *Fortunes {
-	file, err := os.Open("../../fortunes.json")
-	if err != nil {
-		panic(err)
-	}
-
-	defer file.Close()
-
-	var fortunes Fortunes
-	err = json.NewDecoder(file).Decode(&fortunes)
-	if err != nil {
-		panic(err)
-	}
-
-	return &fortunes
-}
-
 func TestOpenJson(t *testing.T) {
 	file, err := os.Open("../../fortunes.json")
 	if err != nil {
@@ -71,16 +54,39 @@ func TestJsonFormat(t *testing.T) {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	if len(fortunes.Fortunes) != 2 {
+		t.Errorf("Size of Json read is not equal to true size")
+	}
+
+	if len(fortunes.Fortunes) != 2 {
+		t.Errorf("Size of Json read is not equal to true size")
+	}
+
 }
 
 func TestFJsonFile(t *testing.T) {
-	quotes := mockingOpenJson()
+	quotes := openJson("../../fortunes.json")
 
-	for _, quote := range quotes.Fortunes {
-		fmt.Printf("\nQuotes from %s:\n", quote.Animal)
-		for _, q := range quote.Quotes {
-			fmt.Printf("\t%s\n", q)
+	fmt.Println(len(quotes.Fortunes))
+
+}
+
+func TestSelectFortune(t *testing.T) {
+	quotes := openJson("../../fortunes.json")
+	animal, quote := selectFortune(*quotes)
+	fmt.Printf("\nanimal: %v, quote: %v", animal, quote)
+}
+
+func TestPickRandom(t *testing.T) {
+	x := 0
+	for x < 10000000 {
+		testInt := pickRandom(11)
+		if testInt > 10 {
+			t.Errorf("testInt bigger then input")
 		}
+
+		x += 1
 	}
 
 }
