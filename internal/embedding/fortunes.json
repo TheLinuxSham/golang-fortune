@@ -1,0 +1,94 @@
+{
+  "fortunes": [
+    {
+      "animal": "turtle",
+      "quotes": [
+        "There is strength in taking it slow... and I’m really strong!",
+        "Slow and steady gets you there – with way less stress.",
+        "Haste makes waste, but really... let waste win.",
+        "You might be faster, but I enjoyed the view a lot longer.",
+        "Patience is a virtue. Trust me, I know what I’m talking about.",
+        "Living slow gives you more time to think. And to nap.",
+        "Life is like a bowl of salad – eat slowly to savor every bite.",
+        "Why rush when you can crawl and still get there?",
+        "You have clocks, I have time. Let’s see who wins in the end.",
+        "Sometimes you just need to pull into your shell and wait it out."
+      ]
+    },
+    {
+      "animal": "wolf",
+      "quotes": [
+        "A lone wolf still howls at the moon, even when no one is listening.",
+        "Strength doesn’t come from numbers; it comes from the fight within.",
+        "The pack protects, but the lone wolf thrives in silence.",
+        "Not every path is meant for the pack. Sometimes, it’s yours alone.",
+        "Run wild, but always keep your eyes on the prey.",
+        "In a world full of sheep, dare to be a wolf.",
+        "The moon calls to those who are unafraid of the night.",
+        "A wolf doesn't lose sleep over the opinions of sheep.",
+        "The forest may be dark, but the wolf knows every shadow.",
+        "The strength of the wolf lies not in its bite, but in its resolve."
+      ]
+    },
+    {
+      "animal": "eagle",
+      "quotes": [
+        "Why walk when you can soar above it all?",
+        "The sky isn't the limit—it's just the beginning.",
+        "Eyes sharp, wings wide—success comes from seeing what others miss.",
+        "The wind may challenge you, but it will also carry you higher.",
+        "An eagle doesn't fear storms; it uses them to rise.",
+        "Great heights aren't reached by flapping—it's in the glide.",
+        "A clear vision leads to greater horizons.",
+        "The higher you fly, the smaller the world appears below.",
+        "You don't need a flock to find your path—just wings strong enough to fly alone.",
+        "Mountains exist to be soared over, not feared."
+      ]
+    },
+    {
+      "animal": "fish",
+      "quotes": [
+        "Go with the flow, but know when to swim against the current.",
+        "In the deepest waters, you find the calmest currents.",
+        "A fish never fears drowning; it thrives in what others fear.",
+        "Not all treasures are found in the shallows.",
+        "The ocean is vast, but each fish knows its way.",
+        "Sometimes it's the smallest fish that swim the farthest.",
+        "Waves come and go, but the fish always keep swimming.",
+        "You can’t control the tides, but you can choose how to swim.",
+        "A fish knows that still waters run deep.",
+        "Big or small, every fish finds its own ocean."
+      ]
+    },
+    {
+      "animal": "tiger",
+      "quotes": [
+        "Silent strength roars the loudest.",
+        "A tiger doesn't need to prove its power; it knows its worth.",
+        "The jungle bows to those who walk with confidence.",
+        "Why blend in when you were born to stand out in stripes?",
+        "Even in the shadows, a tiger's eyes shine bright.",
+        "Patience and precision—two traits of a true hunter.",
+        "A tiger doesn’t chase prey—it waits for the perfect moment to strike.",
+        "The fiercest battles are fought in silence, within.",
+        "Power isn’t in the roar; it’s in the controlled strike.",
+        "A tiger’s journey is solitary, but its presence is felt by all."
+      ]
+    },
+    {
+      "animal": "gazelle",
+      "quotes": [
+        "Grace and speed are the true marks of survival.",
+        "Not every escape is out of fear—sometimes, it’s for freedom.",
+        "The swiftest paths are taken with light steps and a clear mind.",
+        "In a world of predators, the gazelle thrives on agility.",
+        "You don’t need to be the strongest, just quick enough to stay ahead.",
+        "Even the gentlest creatures know how to navigate a wild world.",
+        "Elegance isn't about standing still—it's about moving with purpose.",
+        "Run towards your goals, but never lose your grace.",
+        "A gazelle knows that the race is won not by force, but by timing.",
+        "The beauty of a gazelle lies in its ability to outrun its fears."
+      ]
+    }
+  ]
+}
