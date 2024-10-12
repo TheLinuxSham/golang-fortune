@@ -21,13 +21,6 @@ func pickRandom(maxValue int) int {
 }
 
 func openJson() *Fortunes {
-	// file, err := os.Open(filepath)
-	// if err != nil {
-	// 	panic(err)
-	// }
-
-	// defer file.Close()
-
 	var fortunes Fortunes
 	err := json.Unmarshal(embedding.JsonFile, &fortunes)
 	if err != nil {
